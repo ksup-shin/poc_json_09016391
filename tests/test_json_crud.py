@@ -1,7 +1,10 @@
 """json_crud CRUD 동작을 확인하는 간단한 테스트."""
 
+import sys
 import tempfile
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from json_crud import create_item, read_all, read_by_id, update_item, delete_item
 

@@ -1,7 +1,10 @@
 """json_lib 동작을 확인하는 간단한 테스트."""
 
+import sys
 import tempfile
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from json_lib import load_json, parse_json, save_json, to_json_string
 

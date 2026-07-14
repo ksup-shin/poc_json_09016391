@@ -98,11 +98,21 @@ read_by_id("users.json", 100, id_field="user_no")
 
 ## 테스트
 
-각 모듈에 대응하는 테스트 스크립트가 있으며, 별도 테스트 프레임워크 없이 바로 실행할 수 있다.
+`tests/` 디렉토리에 모듈별 테스트와 회귀 테스트가 있으며, 별도 테스트 프레임워크 없이 바로 실행할 수 있다.
+
+| 파일 | 내용 |
+| --- | --- |
+| `tests/test_json_lib.py` | `json_lib` 기본 파싱/저장 동작 |
+| `tests/test_json_crud.py` | `json_crud` CRUD 기본 동작 |
+| `tests/test_regression.py` | 잘못된 입력, 파일 없음, 커스텀 id 필드 등 회귀용 경계 케이스 |
+| `tests/run_all.py` | 위 테스트를 모두 순서대로 실행 |
 
 ```bash
-python test_json_lib.py
-python test_json_crud.py
+python tests/run_all.py
+# 또는 개별 실행
+python tests/test_json_lib.py
+python tests/test_json_crud.py
+python tests/test_regression.py
 ```
 
 정상 동작 시 각 테스트 이름과 함께 `PASS`, 마지막에 `모든 테스트 통과!`가 출력된다.
